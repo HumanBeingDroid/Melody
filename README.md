@@ -5,3 +5,4 @@ The first stage of project was completed.
 - css
 
 I've changed a little the task.So I tried to make a rwd with Mobile First approach for the first time.
+Also I want to practice BEM methodology for better understanding and further applying. 
