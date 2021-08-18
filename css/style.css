@@ -2,31 +2,45 @@
     Created on : 17 авг. 2021 г., 14:31:01
     Author     : Анастасия
 */
+@font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue Regular Regular'), local('BebasNeueRegular'),
+        url('../fonts/BebasNeueRegular.woff2') format('woff2'),
+        url('../fonts/BebasNeueRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
 }
 .header {
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
     background-color: #635854;
     border-bottom: 4px solid #3596f5;
 }
-.header-menu {
+.header__menu {
     max-width: 80em;
     margin-left: 1em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
     display: flex;
     flex-flow: row wrap;
 }
-.navbar {
-    order: 20;
-    margin-right: 6px;
+.header__menu-logo {
+    order: 5;
 }
-.navbar__list {
-    font-size: 0.8em;
+.header__navbar {
+    order: 20;
+    
+}
+.header__navbar-list {
     margin: 0;
+    margin-right: 6px;
     padding: 0;
     list-style: none;
     display: flex;
@@ -34,7 +48,7 @@ body {
     text-align: center;
     justify-content: space-between;
 }
-.navbar__list-item {
+.header__navbar-list-item {
     margin: 10px 10px 0 0;
     display: flex;
     flex-flow: column wrap;
@@ -43,58 +57,164 @@ body {
     border-radius: 5px;
 }
 
-.navbar__link{
+.header__navbar-link{
     margin: 5px;
     text-decoration: none;
     color: #fff;
 }
-.header-meanu__contacts {
+.header__contacts{
     order: 10;
     margin-left: auto;
     margin-right: 1em;
 }
-.header-menu__contacts-text {
+.header__contacts-text {
     font-size: 0.875em;
     text-align: right;
     display: block;
     color: #fff;
     margin-bottom: 4px;
 }
-.header-menu__contacts-phone {
+.contacts__phone {
     font-weight: 700;
     font-size: 1em;
     text-decoration: none;
     color: #fff;
 }
+.main__image {
+    background: #635854;
+}
+.main__image-home {
+    max-width: 100%;
+}
+.main__image-home path {
+    opacity: 0;
+}
+.main__image-home path:hover {
+    opacity: 1;
+}
+.main__showroom {
+    background: #635854;
+    text-align: center;
+}
+.main__showroom-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: normal;
+    color: #fff;
+    margin: 0;
+}
+.counter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    color: #fff;
+}
+.main__showroom-counter-button {
+    background-color: #635854;
+    border: none;
+    cursor: pointer;
+}
+.counter-button__arrow_down {
+    transform: rotateX(180deg);
+}
+.main__showroom-button {
+    padding: 10px 12px;
+    font-size: 14px;
+    background: #3596f5;
+    border-radius: 6px;
+    color: #fff;
+    border: none;
+    margin: 5px 0;
+}
 /* PC version */
 @media screen and (min-width: 1000px) {
-.header-menu {
+.header__menu {
     margin: auto;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 }
-.navbar {
-    order: unset;
+.header__menu-logo {
+    order: 5;
+}
+.header__navbar  {
+    order: 10;
     margin: 0;
 }
-.navbar__list { 
+.header__navbar-list { 
     font-size: 1em;
     flex-flow: row nowrap;
 }
-.navbar__list-item {
+.header__navbar-list-item {
     margin: 0 2.5em;
     border: none;
 }
-.header-meanu__contacts {
-    order: unset;
+.header__contacts {
+    order: 20;
     margin: 0;
 }
-.header-menu__contacts-text {
+.header__contacts-text {
     line-height: 16px;
 }
-.header-menu__contacts-phone {
+.contacts__phone {
     font-size: 1.1em;
     line-height: 20px;
+}
+.main__container {
+    max-width: 80em;
+    margin: auto;
+    padding-top: 54px;
+    display: flex;
+}
+.main__image {
+    background: none;
+}
+.main__image-home {
+    border: none;
+}
+.main__showroom {
+    background: #fff;
+    flex: 1 1 500px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.main__showroom-title {
+    margin: 0;
+    font-size: 2em;
+    color: #635854;
+}
+.counter-button {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.counter {
+    font-size: 7.75em;
+    color: #635854;
+}
+.main__image-home {
+    width: 734px;
+    height: 640px;
+}
+.main__image-home path {
+cursor: pointer;
+}
+.main__showroom-counter-button {
+    background: #fff;
+}
+.main__showroom-button {
+    font-size: 100%;
+    padding: 16px 36px;
+    cursor: pointer;
+    margin: 0;
+    margin-bottom: 3px;
+}
+}
+@media (pointer:coarse) {
+    .main__image-home path {
+    opacity: 0;
+}
+.main__image-home path:hover {
+    opacity: 1;
 }
 }
