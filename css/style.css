@@ -86,10 +86,13 @@ body {
 .main__image-home {
     max-width: 100%;
 }
-.main__image-home path {
+.image-home_item {
     opacity: 0;
 }
-.main__image-home path:hover {
+.image-home_item:hover {
+    opacity: 1;
+}
+.main__image-home-current-floor {
     opacity: 1;
 }
 .main__showroom {
@@ -217,4 +220,5 @@ cursor: pointer;
 .main__image-home path:hover {
     opacity: 1;
 }
+
 }
