@@ -3,6 +3,7 @@ The first stage of project was completed.
 ## The following technologies were applied: 
 - html
 - css
+- JavaScript
 
-I've changed a little the task.So I tried to make a rwd with Mobile First approach for the first time.
-Also I want to practice BEM methodology for better understanding and further applying. 
+I tried to make a rwd with Mobile First approach for the first time. It was realised with the first part of the project: header and main elements.
+
