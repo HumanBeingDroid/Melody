@@ -1,7 +1,3 @@
-/* 
-    Created on : 17 авг. 2021 г., 14:31:01
-    Author     : Анастасия
-*/
 @font-face {
     font-family: 'Bebas Neue';
     src: local('Bebas Neue Regular Regular'), local('BebasNeueRegular'),
@@ -11,206 +7,306 @@
     font-style: normal;
     font-display: swap;
 }
-
 * {
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Roboto', sans-serif;
 }
 .header {
+    max-width: 100%;
     background-color: #635854;
     border-bottom: 4px solid #3596f5;
 }
-.header__menu {
-    max-width: 80em;
-    margin-left: 1em;
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
-    display: flex;
-    flex-flow: row wrap;
+.container {
+    display: flex;/* чтобы элементы хедера располагались в ряд */
+    flex-flow: row wrap; /* чтобы список навбара ушел вниз*/
 }
-.header__menu-logo {
+.logo-image {
+    margin: 1em 0 0 1em;
     order: 5;
 }
-.header__navbar {
+.navbar {
     order: 20;
-    
 }
-.header__navbar-list {
-    margin: 0;
-    margin-right: 6px;
-    padding: 0;
+.navbar-list {
+    padding: 0 0.625em;
     list-style: none;
-    display: flex;
-    flex-flow: row wrap;
+    display: flex; /* чтобы элементы списка располагались в ряд*/
+    flex-flow: row wrap; /* чтобы непоместившиеся элементы списка ушли вниз*/
     text-align: center;
     justify-content: space-between;
 }
-.header__navbar-list-item {
-    margin: 10px 10px 0 0;
+.navbar-list-item {
+    margin: 10px 0 0 0;
+    padding: 5px 0; /* воздух внутри кнопок навигации */
+    list-style: none;
     display: flex;
     flex-flow: column wrap;
-    flex: 1 1 150px;
+    flex: 1 1 150px; /* одинаковые кнопки навигации*/
     border: 1px solid #fff;
     border-radius: 5px;
 }
-
-.header__navbar-link{
-    margin: 5px;
-    text-decoration: none;
-    color: #fff;
+.navbar-list-item:nth-of-type(odd) {
+    margin-right: 10px; /* чтобы отступ был у нечетных кнопок */
 }
-.header__contacts{
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+}
+.contacts {
     order: 10;
     margin-left: auto;
     margin-right: 1em;
+    margin-top: 0.8rem;
 }
-.header__contacts-text {
-    font-size: 0.875em;
-    text-align: right;
-    display: block;
+.contacts-text {
+    font-size: 80%;
     color: #fff;
-    margin-bottom: 4px;
+    display: block; /* чтобы текст и номер отображались в 2 ряда */
+    text-align: right; /* выравнивание по правому краю */
 }
-.contacts__phone {
-    font-weight: 700;
-    font-size: 1em;
+.contacts-phone {
+    font-weight: bold;
+    margin-top: 0.25em;
     text-decoration: none;
     color: #fff;
 }
-.main__image {
-    background: #635854;
-}
-.main__image-home {
+.main {
     max-width: 100%;
 }
-.image-home_item {
+.main-image{
+    background-color: #635854;
+}
+.image-home path { /* курсор при наведении на этажи картинки */
+cursor: pointer;
+}
+.home-item {
     opacity: 0;
 }
-.image-home_item:hover {
+.home-item:hover {
     opacity: 1;
 }
-.main__image-home-current-floor {
+.image-home-current-floor {
     opacity: 1;
 }
-.main__showroom {
-    background: #635854;
-    text-align: center;
+.showroom {
+    background-color: #635854;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
 }
-.main__showroom-title {
+.showroom-title {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: normal;
     color: #fff;
-    margin: 0;
+    margin-bottom: 0.5rem;
+}
+.counter-button {
+    background-color: #635854;
+    border: none;
 }
 .counter {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2em;
     color: #fff;
+    margin: 2rem; /* отодвигает кнопки от счетчика */
 }
-.main__showroom-counter-button {
-    background-color: #635854;
-    border: none;
-    cursor: pointer;
-}
-.counter-button__arrow_down {
+.arrow-down {
     transform: rotateX(180deg);
 }
-.main__showroom-button {
-    padding: 10px 12px;
-    font-size: 14px;
-    background: #3596f5;
+.showroom-button {
+    font-size: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #3596f5;
     border-radius: 6px;
     color: #fff;
     border: none;
     margin: 5px 0;
 }
-/* PC version */
-@media screen and (min-width: 1000px) {
-.header__menu {
-    margin: auto;
+@media screen and (min-width: 1200px) {
+.container {
+    max-width: 67.262%; /* ширина всего контента внутри хедера */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.header-logo {
+    margin-top: 1em;
+}
+.logo-image {
+	margin: 0;
+}
+.navbar-list {
+    padding: 0;
+    list-style: none;
+    display: flex; /* чтобы элементы списка располагались в ряд*/
+    flex-flow: row nowrap;
+    order: 10;
+}
+.navbar-list-item {
+    margin: 0 2.5em; /* отступ чтобы длина навбара была 700+ */
+    padding: 0;
+    display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
-}
-.header__menu-logo {
-    order: 5;
-}
-.header__navbar  {
-    order: 10;
-    margin: 0;
-}
-.header__navbar-list { 
-    font-size: 1em;
-    flex-flow: row nowrap;
-}
-.header__navbar-list-item {
-    margin: 0 2.5em;
     border: none;
 }
-.header__contacts {
+.navbar-list-item:nth-of-type(odd) {
+    margin-right: 2.5em; /* чтобы переопределить свойство */
+}
+.contacts {
     order: 20;
-    margin: 0;
+    margin: 0.875em 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: right; /* выравнивание по правому краю */
 }
-.header__contacts-text {
-    line-height: 16px;
+.contacts-text {
+    font-size: 0.875em;
 }
-.contacts__phone {
-    font-size: 1.1em;
-    line-height: 20px;
-}
-.main__container {
-    max-width: 80em;
+.main {
+    max-width: 67.262%; /* ширина контейнера */
     margin: auto;
     padding-top: 54px;
     display: flex;
 }
-.main__image {
-    background: none;
+.main-image {
+    background-color: #fff;
 }
-.main__image-home {
-    border: none;
+.image-home { /* размеры картинки svg */
+    width: 734px;
+    height: 640px;
 }
-.main__showroom {
-    background: #fff;
+.showroom { /* стиль позволяет выровнять элементы и заполнить весь контейнер равномерно*/
+    background-color: #fff;
     flex: 1 1 500px;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-between;
 }
-.main__showroom-title {
+.showroom-title {
     margin: 0;
     font-size: 2em;
     color: #635854;
 }
-.counter-button {
+.arrow-buttons { /* выравнивает стрелки по вертикали вплотную к счетчику */
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
+.counter-button { /* кнопки-стрелки */
+    background-color: #fff;
+    align-self: center;
+    cursor: pointer;
+}
 .counter {
     font-size: 7.75em;
     color: #635854;
+    margin: 1.5rem 0; /* отодвигает кнопки от счетчика */
 }
-.main__image-home {
-    width: 734px;
-    height: 640px;
+.arrow-down {
+    transform: rotateX(180deg);
 }
-.main__image-home path {
-cursor: pointer;
-}
-.main__showroom-counter-button {
-    background: #fff;
-}
-.main__showroom-button {
-    font-size: 100%;
+.showroom-button {
     padding: 16px 36px;
     cursor: pointer;
-    margin: 0;
-    margin-bottom: 3px;
+    margin: 5px 0;
+}
+.modal {
+    position: fixed; /*фиксируем позицию, поверх всего экрана */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.2s;
+}
+.is-open {
+    opacity: 1;
+    transform: scale(1);
+}
+.modal-dialog { /* информационное окно */
+    position: relative; 
+    max-width: 62.5em;
+    min-height: 35em;
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    opacity: 0;
+    transform: translateY(-10%);
+    transition: transform 0.2s, opacity 0.2s;
+    transition-delay: 0.2s;
+
+}
+.is-open > .modal-dialog {
+    opacity: 1;
+    transform: translateY(0);
+}
+.modal-image {
+    background-color: #ebebeb;
+    width: 60%;
+    text-align: center;
+    padding: 50px;
+}
+.flats path { /* выделенные области каждой квартиры прозрачны*/
+    opacity: 0;
+    cursor: pointer;
+}
+path.current-flat {
+    opacity: 1;
+}
+.modal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.modal-info {
+    width: 40%;
+    padding: 50px 46px;
+}
+.flat-list {
+    padding: 0;
+    list-style: none;
+    margin-top: 55px;
+}
+.flat-item {
+    margin-bottom: 10px;
+}
+.flat-link {
+    font-size: 1em;
+    line-height: 19px;
+    color: #635854;
+    text-decoration: none;
+}
+.current-flat-item {
+    color:#3596f5;
+    text-decoration: underline;
+}
+.modal-alert {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 19px;
+    color: #635854;
+    margin-top: 56px;
+}
+.modal-close-button {
+    position: absolute;
+    top: 38px;
+    right: 27px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    
 }
 }
 @media (pointer:coarse) {
@@ -220,5 +316,4 @@ cursor: pointer;
 .main__image-home path:hover {
     opacity: 1;
 }
-
 }
